@@ -16,6 +16,7 @@ function(add_sample)
     ${ARGN}
   )
   add_executable(${SDK_ADD_SAMPLE_TARGET} ${SDK_ADD_SAMPLE_SOURCES})
+  set_target_properties(${SDK_ADD_SAMPLE_TARGET} PROPERTIES VS_DEBUGGER_ENVIRONMENT "COMPUTECPP_TARGET=intel:cpu")
   add_sycl_to_target(TARGET ${SDK_ADD_SAMPLE_TARGET}
     SOURCES ${SDK_ADD_SAMPLE_SOURCES})
   if(NOT SDK_ADD_SAMPLE_NO_TEST)
