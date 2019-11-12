@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.4.3)
 
+set(ComputeCpp_DIR $ENV{COMPUTECPP_ROOT_DIR}) 
+add_definitions( -D_ALLOW_COMPILER_AND_STL_VERSION_MISMATCH ) 
+set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT "example-sycl-application")
+
 project(ComputeCpp-SDK)
 
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/Modules)
